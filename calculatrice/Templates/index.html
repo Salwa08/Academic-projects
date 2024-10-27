@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        h1 {
+            color: palevioletred;
+            text-align: center;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 100px;
+        }
+        body {
+            background-image: url("https://i.pinimg.com/736x/f4/da/b0/f4dab065ab04c33a5da94bd143bf00b8.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+
+
+        }
+        h2 {
+            margin: 30px;
+            text-align: center;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 15px;
+            font-style: italic;
+            font-weight: 500;
+        }
+        .calculator {
+            width: 300px;
+            margin: 80px auto;
+            padding: 30px;
+            border: 3px solid #333;
+            border-radius: 20px;
+            background-color: palevioletred;
+        }
+        .display {
+            width: 100%;
+            height: 80px;
+            margin-bottom: 40px;
+            font-size: 1.5em;
+            text-align: right;
+            padding: 5px;
+            background-color: white;
+            border: 2px solid #333;
+            border-radius: 20px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+        .button {
+            padding: 15px;
+            font-size: 1em;
+            text-align: center;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 20px;
+            font-family: Arial;
+            font-weight: bold;
+        }
+        .button.operation {
+            background-color: black;
+            color: white;
+        }
+        button:hover {
+            background-color: whitesmoke;
+            color: pink;
+        }
+        input#result {
+            margin-top: 20px;
+        }
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid white;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation:
+                typing 3.5s steps(30, end),
+                blink-caret .5s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: pink }
+        }
+    </style>
+</head>
+<body>
+    <img src="https://media.tenor.com/zVvViQKqa0MAAAAj/psybirdb1oom.gif" width="87" height="87" alt="a pixel art of hello kitty wearing a pink bow" style="max-width: 103px; background-color: unset;">
+    <img src="https://media.tenor.com/zVvViQKqa0MAAAAj/psybirdb1oom.gif" width="87" height="87" alt="a pixel art of hello kitty wearing a pink bow" style="max-width: 103px; background-color: unset;">
+    <img src="https://media.tenor.com/zVvViQKqa0MAAAAj/psybirdb1oom.gif" width="87" height="87" alt="a pixel art of hello kitty wearing a pink bow" style="max-width: 103px; background-color: unset;">
+    <div class="typewriter">
+        <h1>Calculator</h1>
+    </div>
+    <h2>Effortless Calculations at Your Fingertips</h2>
+</div>
+
+    <div class="calculator">
+        <form method="POST" action="{% url 'index' %}">
+            {% csrf_token %}
+            <input type="text" name="case_1" class="display" id="display1" placeholder="0" required />
+            <input type="text" name="case_2" class="display" id="display2" placeholder="0" required />
+            <div class="buttons">
+                <button type="submit" name="operation" value="plus" class="button operation">+</button>
+                <button type="submit" name="operation" value="moins" class="button operation">−</button>
+                <button type="submit" name="operation" value="multiplication" class="button operation">×</button>
+                <button type="submit" name="operation" value="division" class="button operation">÷</button>
+            </div>
+            <input type="text" name="result" class="display" id="result" placeholder="0" readonly />
+
+        </form>
+        {% if r is not None %}
+            <script>
+                document.getElementById('result').value = '{{ r }}';
+            </script>
+        {% endif %}
+    </div>
+</body>
+
+</body>
+</html>
