@@ -57,9 +57,9 @@ Our tutorial emphasizes key Django features such as:
 4. The result displays below, and inputs persist for further calculations.
 
 ### Contributors
-**salwa08** - Project setup and coordination.
-**chaymaa09** - Backend and functionality.
-**Byeolunu** - Front-end and template integration.
+- [salwa08](https://github.com/Salwa08) - Project setup and coordination.
+- [chaymaa09](https://github.com/chaymaa09) - Backend and functionality.
+- [Byeolunu](https://github.com/Byeolunu) - Front-end and template integration.
 
 ### Additional Resources
 
