@@ -109,8 +109,8 @@
     <div class="calculator">
         <form method="POST" action="{% url 'index' %}">
             {% csrf_token %}
-            <input type="text" name="case_1" class="display" id="display1" placeholder="0" required />
-            <input type="text" name="case_2" class="display" id="display2" placeholder="0" required />
+            <input type="text" name="case_1" class="display" id="display1" placeholder="0" value="{{ request.POST.case_1 }}" required />
+            <input type="text" name="case_2" class="display" id="display2" placeholder="0" value="{{ request.POST.case_2 }}"required />
             <div class="buttons">
                 <button type="submit" name="operation" value="plus" class="button operation">+</button>
                 <button type="submit" name="operation" value="moins" class="button operation">−</button>
